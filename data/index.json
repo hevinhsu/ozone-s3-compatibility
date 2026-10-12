@@ -1,11 +1,2395 @@
 {
-  "generated_at": "2026-10-11T09:20:25Z",
+  "generated_at": "2026-10-12T09:40:31Z",
   "rate_formula": "compatibility_rate = passed / (passed + failed + errored); skipped and NA are excluded",
   "suite_order": [
     "s3_tests",
     "mint"
   ],
   "runs": [
+    {
+      "id": "2026-10-12T09-15-33Z",
+      "status": "partial",
+      "started_at": "2026-10-12T09:15:33Z",
+      "finished_at": "2026-10-12T09:40:31Z",
+      "workflow_run_url": "https://github.com/hevinhsu/ozone-s3-compatibility/actions/runs/38228645011",
+      "execution": {
+        "s3_tests_args": "s3tests/functional",
+        "mint_mode": "core",
+        "mint_targets": [],
+        "ozone_datanodes": "1"
+      },
+      "file": "data/runs/2026-10-12T09-15-33Z.json",
+      "sources": {
+        "ozone": {
+          "repo": "https://github.com/apache/ozone.git",
+          "ref": "master",
+          "commit": "025266b52a6dcaf39508607cad736799c40907e8",
+          "short_commit": "025266b52a6d"
+        },
+        "s3_tests": {
+          "repo": "https://github.com/ceph/s3-tests.git",
+          "ref": "submodule",
+          "commit": "fb8b73092bb1dd8db829f1205a9e52e73bf9a232",
+          "short_commit": "fb8b73092bb1"
+        },
+        "mint": {
+          "repo": "https://github.com/minio/mint.git",
+          "ref": "submodule",
+          "commit": "12559d50625b722d11fd798ae8ac2fb204e66dd1",
+          "short_commit": "12559d50625b"
+        }
+      },
+      "suites": {
+        "s3_tests": {
+          "label": "s3-tests",
+          "status": "completed",
+          "summary": {
+            "total": 793,
+            "passed": 3,
+            "failed": 21,
+            "errored": 765,
+            "skipped": 4,
+            "eligible": 789,
+            "compatibility_rate": 0.0038
+          },
+          "feature_summaries": [
+            {
+              "name": "s3",
+              "label": "s3",
+              "summary": {
+                "total": 316,
+                "passed": 0,
+                "failed": 0,
+                "errored": 316,
+                "skipped": 0,
+                "eligible": 316,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_bucket_list_empty",
+                  "status": "error",
+                  "message": "failed on teardown with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_list_many",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_list_delimiter_basic",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_list_encoding_basic",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_list_delimiter_prefix",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_list_delimiter_prefix_ends_with_delimiter",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_list_delimiter_alt",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_list_delimiter_prefix_underscore",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_list_delimiter_percentage",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_list_delimiter_whitespace",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_list_delimiter_dot",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_list_delimiter_unreadable",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "encryption",
+              "label": "encryption",
+              "summary": {
+                "total": 108,
+                "passed": 0,
+                "failed": 0,
+                "errored": 108,
+                "skipped": 0,
+                "eligible": 108,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_multipart_sse_c_get_part",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_non_multipart_sse_c_get_part",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_encrypted_transfer_1b",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_encrypted_transfer_1kb",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_encrypted_transfer_1MB",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_encrypted_transfer_13b",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_encryption_sse_c_method_head",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_encryption_sse_c_present",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_encryption_sse_c_other_key",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_encryption_sse_c_invalid_md5",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_encryption_sse_c_no_md5",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_encryption_sse_c_no_key",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "iam_account",
+              "label": "iam account",
+              "summary": {
+                "total": 65,
+                "passed": 0,
+                "failed": 0,
+                "errored": 61,
+                "skipped": 4,
+                "eligible": 61,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_account_user_create",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_case_insensitive_name",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_delete",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_list",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_list_path_prefix",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_update_name",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_update_path",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_access_key_create",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_current_user_access_key_create",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_access_key_update",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_current_user_access_key_update",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_access_key_delete",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "list_objects_v2",
+              "label": "list objects v2",
+              "summary": {
+                "total": 50,
+                "passed": 0,
+                "failed": 0,
+                "errored": 50,
+                "skipped": 0,
+                "eligible": 50,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_bucket_list_distinct",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_listv2_many",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_basic_key_count",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_listv2_delimiter_basic",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_listv2_encoding_basic",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_listv2_delimiter_prefix",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_listv2_delimiter_prefix_ends_with_delimiter",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_listv2_delimiter_alt",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_listv2_delimiter_prefix_underscore",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_listv2_delimiter_percentage",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_listv2_delimiter_whitespace",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_listv2_delimiter_dot",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "parametrize",
+              "label": "parametrize",
+              "summary": {
+                "total": 45,
+                "passed": 0,
+                "failed": 0,
+                "errored": 45,
+                "skipped": 0,
+                "eligible": 45,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_copy_part_enc[sse-s3-sse-s3-STANDARD-STANDARD-8388608]",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_copy_part_enc[sse-s3-sse-c-STANDARD-STANDARD-8388608]",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_copy_part_enc[sse-s3-sse-kms-STANDARD-STANDARD-8388608]",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_copy_part_enc[sse-c-sse-s3-STANDARD-STANDARD-8388608]",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_copy_part_enc[sse-c-sse-c-STANDARD-STANDARD-8388608]",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_copy_part_enc[sse-c-sse-kms-STANDARD-STANDARD-8388608]",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_copy_part_enc[sse-kms-sse-s3-STANDARD-STANDARD-8388608]",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_copy_part_enc[sse-kms-sse-c-STANDARD-STANDARD-8388608]",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_copy_part_enc[sse-kms-sse-kms-STANDARD-STANDARD-8388608]",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_copy_enc[sse-s3-sse-s3-STANDARD-STANDARD-1]",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_copy_enc[sse-s3-sse-s3-STANDARD-STANDARD-1024]",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_copy_enc[sse-s3-sse-s3-STANDARD-STANDARD-1048576]",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "s3select",
+              "label": "s3select",
+              "summary": {
+                "total": 35,
+                "passed": 0,
+                "failed": 1,
+                "errored": 34,
+                "skipped": 0,
+                "eligible": 35,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_generate_where_clause",
+                  "status": "fail",
+                  "message": "botocore.eventstream.ChecksumMismatch: Checksum mismatch: expected 0x7273696f, calculated 0x62b8354c"
+                },
+                {
+                  "name": "test_generate_where_clause",
+                  "status": "error",
+                  "message": "failed on teardown with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_generate_projection",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_count_operation",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_count_json_operation",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_json_column_sum_min_max",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_json_nullif_expressions",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_column_sum_min_max",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_nullif_expressions",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_nulliftrue_expressions",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_is_not_null_expressions",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lowerupper_expressions",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "copy",
+              "label": "copy",
+              "summary": {
+                "total": 33,
+                "passed": 0,
+                "failed": 0,
+                "errored": 33,
+                "skipped": 0,
+                "eligible": 33,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_object_copy_zero_size",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_copy_16m",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_copy_same_bucket",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_copy_verify_contenttype",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_copy_to_itself",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_copy_to_itself_with_metadata",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_copy_diff_bucket",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_copy_not_owned_bucket",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_copy_not_owned_object_bucket",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_copy_canned_acl",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_copy_retaining_metadata",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_copy_replacing_metadata",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "bucket_policy",
+              "label": "bucket policy",
+              "summary": {
+                "total": 31,
+                "passed": 0,
+                "failed": 0,
+                "errored": 31,
+                "skipped": 0,
+                "eligible": 31,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_bucket_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucketv2_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_policy_deny_self_denied_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_policy_deny_self_denied_policy_confirm_header",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_policy_acl",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucketv2_policy_acl",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_policy_different_tenant",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_policy_multipart",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_policy_tenanted_bucket",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_policy_another_bucket",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucketv2_policy_another_bucket",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_policy_set_condition_operator_end_with_IfExists",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "user_policy",
+              "label": "user policy",
+              "summary": {
+                "total": 31,
+                "passed": 2,
+                "failed": 15,
+                "errored": 14,
+                "skipped": 0,
+                "eligible": 31,
+                "compatibility_rate": 0.0645
+              },
+              "examples": [
+                {
+                  "name": "test_put_user_policy",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_put_user_policy_invalid_user",
+                  "status": "fail",
+                  "message": "assert 400 == 404"
+                },
+                {
+                  "name": "test_put_existing_user_policy",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_list_user_policy",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_list_user_policy_invalid_user",
+                  "status": "fail",
+                  "message": "assert 400 == 404"
+                },
+                {
+                  "name": "test_get_user_policy",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_get_user_policy_invalid_user",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_get_user_policy_invalid_policy_name",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_get_deleted_user_policy",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_get_user_policy_from_multiple_policies",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_delete_user_policy",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_delete_user_policy_invalid_user",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                }
+              ]
+            },
+            {
+              "name": "iam_tenant",
+              "label": "iam tenant",
+              "summary": {
+                "total": 28,
+                "passed": 2,
+                "failed": 15,
+                "errored": 11,
+                "skipped": 0,
+                "eligible": 28,
+                "compatibility_rate": 0.0714
+              },
+              "examples": [
+                {
+                  "name": "test_put_user_policy",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_put_user_policy_invalid_user",
+                  "status": "fail",
+                  "message": "assert 400 == 404"
+                },
+                {
+                  "name": "test_put_existing_user_policy",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_list_user_policy",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_list_user_policy_invalid_user",
+                  "status": "fail",
+                  "message": "assert 400 == 404"
+                },
+                {
+                  "name": "test_get_user_policy",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_get_user_policy_invalid_user",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_get_user_policy_invalid_policy_name",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_get_deleted_user_policy",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_get_user_policy_from_multiple_policies",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_delete_user_policy",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                },
+                {
+                  "name": "test_delete_user_policy_invalid_user",
+                  "status": "fail",
+                  "message": "botocore.exceptions.ClientError: An error occurred (Unknown) when calling the PutUserPolicy operation: Unknown"
+                }
+              ]
+            },
+            {
+              "name": "headers",
+              "label": "headers",
+              "summary": {
+                "total": 27,
+                "passed": 0,
+                "failed": 0,
+                "errored": 27,
+                "skipped": 0,
+                "eligible": 27,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_object_create_bad_md5_invalid_short",
+                  "status": "error",
+                  "message": "failed on teardown with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_create_bad_md5_bad",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_create_bad_md5_empty",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_create_bad_md5_none",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_create_bad_expect_mismatch",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_create_bad_expect_empty",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_create_bad_expect_none",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_create_bad_contentlength_empty",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_create_bad_contentlength_negative",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_create_bad_contentlength_none",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_create_bad_contenttype_invalid",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_create_bad_contenttype_empty",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "webidentity_test",
+              "label": "webidentity test",
+              "summary": {
+                "total": 27,
+                "passed": 0,
+                "failed": 0,
+                "errored": 27,
+                "skipped": 0,
+                "eligible": 27,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_assume_role_with_web_identity",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_check_on_different_buckets",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_check_on_same_bucket",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_check_put_obj_denial",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_swapping_role_policy_and_session_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_check_different_op_permissions",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_check_with_deny_effect",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_check_with_deny_on_same_op",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_bucket_policy_role_arn",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_bucket_policy_session_arn",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_copy_object",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_no_bucket_role_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "tagging",
+              "label": "tagging",
+              "summary": {
+                "total": 25,
+                "passed": 0,
+                "failed": 0,
+                "errored": 25,
+                "skipped": 0,
+                "eligible": 25,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_set_bucket_tagging",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_set_multipart_tagging",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_get_obj_tagging",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_get_obj_head_tagging",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_max_tags",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_excess_tags",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_max_kvsize_tags",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_excess_key_tags",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_excess_val_tags",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_modify_tags",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_delete_tags",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_post_object_tags_anonymous_request",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "lifecycle",
+              "label": "lifecycle",
+              "summary": {
+                "total": 23,
+                "passed": 0,
+                "failed": 0,
+                "errored": 23,
+                "skipped": 0,
+                "eligible": 23,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_lifecycle_set",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_get",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_delete",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_get_no_id",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_id_too_long",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_same_id",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_invalid_status",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_set_date",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_set_invalid_date",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_expiration_days0",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_expiration_header_put",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_expiration_header_head",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "sse_s3",
+              "label": "sse s3",
+              "summary": {
+                "total": 21,
+                "passed": 0,
+                "failed": 0,
+                "errored": 21,
+                "skipped": 0,
+                "eligible": 21,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_bucket_policy_put_obj_s3_noenc",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_policy_put_obj_s3_incorrect_algo_sse_s3",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_policy_put_obj_s3_kms",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_bucket_encryption_s3",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_get_bucket_encryption_s3",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_delete_bucket_encryption_s3",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_s3_default_upload_1b",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_s3_default_upload_1kb",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_s3_default_upload_1mb",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_s3_default_upload_8mb",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_kms_default_upload_1b",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_kms_default_upload_1kb",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "iam_cross_account",
+              "label": "iam cross account",
+              "summary": {
+                "total": 19,
+                "passed": 0,
+                "failed": 0,
+                "errored": 18,
+                "skipped": 1,
+                "eligible": 18,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_same_account_role_policy_allow",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_cross_account_role_policy_allow",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_policy_allow_create_bucket",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_policy_allow_get_role",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_cross_account_bucket_user_policy_allow_user_arn",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_cross_account_user_bucket_policy_allow_user_arn",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_cross_account_user_bucket_policy_allow_account_arn",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_cross_account_bucket_user_policy_allow_account_arn",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_cross_account_user_bucket_policy_allow_account_id",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_cross_account_bucket_user_policy_allow_account_id",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_cross_account_bucket_acl_user_policy_grant_canonical_id",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_cross_account_user_policy_bucket_acl_grant_canonical_id",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "iam_user",
+              "label": "iam user",
+              "summary": {
+                "total": 17,
+                "passed": 0,
+                "failed": 0,
+                "errored": 17,
+                "skipped": 0,
+                "eligible": 17,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_account_user_create",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_case_insensitive_name",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_delete",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_list",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_list_path_prefix",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_update_name",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_update_path",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_access_key_create",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_current_user_access_key_create",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_access_key_update",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_current_user_access_key_update",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_user_access_key_delete",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "iam_role",
+              "label": "iam role",
+              "summary": {
+                "total": 13,
+                "passed": 0,
+                "failed": 0,
+                "errored": 13,
+                "skipped": 0,
+                "eligible": 13,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_account_role_create",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_case_insensitive_name",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_delete",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_list",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_list_path_prefix",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_update",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_list_permission",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_policy_allow",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_same_account_role_policy_allow",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_cross_account_role_policy_allow",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_policy_allow_create_bucket",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "abac_test",
+              "label": "abac test",
+              "summary": {
+                "total": 12,
+                "passed": 0,
+                "failed": 0,
+                "errored": 12,
+                "skipped": 0,
+                "eligible": 12,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_assume_role_with_web_identity_with_request_tag",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_with_principal_tag",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_for_all_values",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_for_all_values_deny",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_tag_keys_trust_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_tag_keys_role_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_resource_tag",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_resource_tag_deny",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_wrong_resource_tag_deny",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_resource_tag_princ_tag",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_resource_tag_copy_obj",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_role_resource_tag",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "bucket_encryption",
+              "label": "bucket encryption",
+              "summary": {
+                "total": 12,
+                "passed": 0,
+                "failed": 0,
+                "errored": 12,
+                "skipped": 0,
+                "eligible": 12,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_sse_s3_default_upload_1b",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_s3_default_upload_1kb",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_s3_default_upload_1mb",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_s3_default_upload_8mb",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_kms_default_upload_1b",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_kms_default_upload_1kb",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_kms_default_upload_1mb",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_kms_default_upload_8mb",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_s3_default_method_head",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_s3_default_multipart_upload",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_s3_default_post_object_authenticated_request",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_sse_kms_default_post_object_authenticated_request",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "session_policy",
+              "label": "session policy",
+              "summary": {
+                "total": 12,
+                "passed": 0,
+                "failed": 0,
+                "errored": 12,
+                "skipped": 0,
+                "eligible": 12,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_session_policy_check_on_different_buckets",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_check_on_same_bucket",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_check_put_obj_denial",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_swapping_role_policy_and_session_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_check_different_op_permissions",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_check_with_deny_effect",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_check_with_deny_on_same_op",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_bucket_policy_role_arn",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_bucket_policy_session_arn",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_copy_object",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_no_bucket_role_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_session_policy_bucket_policy_deny",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "checksum",
+              "label": "checksum",
+              "summary": {
+                "total": 10,
+                "passed": 0,
+                "failed": 0,
+                "errored": 10,
+                "skipped": 0,
+                "eligible": 10,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_object_checksum_sha256",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_object_checksum_crc64nvme",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_multipart_checksum_sha256",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_multipart_use_cksum_helper_sha256",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_multipart_use_cksum_helper_crc64nvme",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_multipart_use_cksum_helper_crc32",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_multipart_use_cksum_helper_crc32c",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_multipart_use_cksum_helper_sha1",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_post_object_upload_checksum",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_get_multipart_checksum_object_attributes",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "test_of_sts",
+              "label": "test of sts",
+              "summary": {
+                "total": 10,
+                "passed": 0,
+                "failed": 5,
+                "errored": 5,
+                "skipped": 0,
+                "eligible": 10,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_get_session_token",
+                  "status": "fail",
+                  "message": "TypeError: 'NoneType' object is not subscriptable"
+                },
+                {
+                  "name": "test_assume_role_allow",
+                  "status": "fail",
+                  "message": "AssertionError: AuthorizationHeaderMalformed\nassert False"
+                },
+                {
+                  "name": "test_assume_role_deny",
+                  "status": "fail",
+                  "message": "AssertionError: AuthorizationHeaderMalformed\nassert False"
+                },
+                {
+                  "name": "test_assume_role_creds_expiry",
+                  "status": "fail",
+                  "message": "AssertionError: AuthorizationHeaderMalformed\nassert False"
+                },
+                {
+                  "name": "test_assume_role_deny_head_nonexistent",
+                  "status": "fail",
+                  "message": "AssertionError: AuthorizationHeaderMalformed\nassert False"
+                },
+                {
+                  "name": "test_assume_role_deny_head_nonexistent",
+                  "status": "error",
+                  "message": "failed on teardown with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_allow_head_nonexistent",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_get_caller_identity_root",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_get_caller_identity_non_root_user",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_get_caller_identity_after_assume_role",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "conditional_write",
+              "label": "conditional write",
+              "summary": {
+                "total": 7,
+                "passed": 0,
+                "failed": 0,
+                "errored": 7,
+                "skipped": 0,
+                "eligible": 7,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_put_object_if_match",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_multipart_put_object_if_match",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_current_object_if_none_match",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_multipart_put_current_object_if_none_match",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_current_object_if_match",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_multipart_put_current_object_if_match",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_object_current_if_match",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "lifecycle_expiration",
+              "label": "lifecycle expiration",
+              "summary": {
+                "total": 7,
+                "passed": 0,
+                "failed": 0,
+                "errored": 7,
+                "skipped": 0,
+                "eligible": 7,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_lifecycle_expiration_days0",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_expiration_header_put",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_expiration_header_head",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_expiration_header_tags_head",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_expiration_header_and_tags_head",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_plain_null_version_current_transition",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_delete_marker_expiration",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "object_ownership",
+              "label": "object ownership",
+              "summary": {
+                "total": 7,
+                "passed": 0,
+                "failed": 0,
+                "errored": 7,
+                "skipped": 0,
+                "eligible": 7,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_create_bucket_bucket_owner_enforced",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_create_bucket_bucket_owner_preferred",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_create_bucket_object_writer",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_bucket_ownership_bucket_owner_enforced",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_bucket_ownership_bucket_owner_preferred",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_bucket_ownership_object_writer",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_create_delete_bucket_ownership",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "role_policy",
+              "label": "role policy",
+              "summary": {
+                "total": 7,
+                "passed": 0,
+                "failed": 0,
+                "errored": 7,
+                "skipped": 0,
+                "eligible": 7,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_account_role_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_policy_managed",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_policy_allow",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_same_account_role_policy_allow",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_cross_account_role_policy_allow",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_policy_allow_create_bucket",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_role_policy_allow_get_role",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "bucket_logging",
+              "label": "bucket logging",
+              "summary": {
+                "total": 6,
+                "passed": 0,
+                "failed": 0,
+                "errored": 6,
+                "skipped": 0,
+                "eligible": 6,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_put_bucket_logging",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_bucket_logging_errors",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_bucket_logging_owner",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_bucket_logging_permissions",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_put_bucket_logging_policy_wildcard",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_rm_bucket_logging",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "token_resource_tags_test",
+              "label": "token resource tags test",
+              "summary": {
+                "total": 5,
+                "passed": 0,
+                "failed": 0,
+                "errored": 5,
+                "skipped": 0,
+                "eligible": 5,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_assume_role_with_web_identity_resource_tag",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_resource_tag_deny",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_wrong_resource_tag_deny",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_resource_tag_princ_tag",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_resource_tag_copy_obj",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "delete_marker",
+              "label": "delete marker",
+              "summary": {
+                "total": 4,
+                "passed": 0,
+                "failed": 0,
+                "errored": 4,
+                "skipped": 0,
+                "eligible": 4,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_delete_marker_nonversioned",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_delete_marker_versioned",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_delete_marker_suspended",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_delete_marker_expiration",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "group",
+              "label": "group",
+              "summary": {
+                "total": 4,
+                "passed": 0,
+                "failed": 0,
+                "errored": 4,
+                "skipped": 0,
+                "eligible": 4,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_account_group_create",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_group_case_insensitive_name",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_group_list",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_group_update",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "group_policy",
+              "label": "group policy",
+              "summary": {
+                "total": 4,
+                "passed": 0,
+                "failed": 0,
+                "errored": 4,
+                "skipped": 0,
+                "eligible": 4,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_account_inline_group_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_managed_group_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_inline_group_policy_allow",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_account_managed_group_policy_allow",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "token_claims_trust_policy_test",
+              "label": "token claims trust policy test",
+              "summary": {
+                "total": 3,
+                "passed": 0,
+                "failed": 0,
+                "errored": 3,
+                "skipped": 0,
+                "eligible": 3,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_assume_role_with_web_identity",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_with_sub",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_with_azp",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "token_principal_tag_role_policy_test",
+              "label": "token principal tag role policy test",
+              "summary": {
+                "total": 3,
+                "passed": 0,
+                "failed": 0,
+                "errored": 3,
+                "skipped": 0,
+                "eligible": 3,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_assume_role_with_web_identity_with_principal_tag",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_for_all_values",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_for_all_values_deny",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "iam",
+              "label": "iam",
+              "summary": {
+                "total": 2,
+                "passed": 0,
+                "failed": 0,
+                "errored": 2,
+                "skipped": 0,
+                "eligible": 2,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_verify_add_existing_client_id_to_oidc",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_verify_update_thumbprintlist_of_oidc",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "lifecycle_transition",
+              "label": "lifecycle transition",
+              "summary": {
+                "total": 2,
+                "passed": 0,
+                "failed": 0,
+                "errored": 2,
+                "skipped": 0,
+                "eligible": 2,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_lifecycle_set_noncurrent_transition",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_lifecycle_plain_null_version_current_transition",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "token_tag_keys_test",
+              "label": "token tag keys test",
+              "summary": {
+                "total": 2,
+                "passed": 0,
+                "failed": 0,
+                "errored": 2,
+                "skipped": 0,
+                "eligible": 2,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_assume_role_with_web_identity_tag_keys_trust_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                },
+                {
+                  "name": "test_assume_role_with_web_identity_tag_keys_role_policy",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "token_request_tag_trust_policy_test",
+              "label": "token request tag trust policy test",
+              "summary": {
+                "total": 1,
+                "passed": 0,
+                "failed": 0,
+                "errored": 1,
+                "skipped": 0,
+                "eligible": 1,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_assume_role_with_web_identity_with_request_tag",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "token_role_tags_test",
+              "label": "token role tags test",
+              "summary": {
+                "total": 1,
+                "passed": 0,
+                "failed": 0,
+                "errored": 1,
+                "skipped": 0,
+                "eligible": 1,
+                "compatibility_rate": 0.0
+              },
+              "examples": [
+                {
+                  "name": "test_assume_role_with_web_identity_role_resource_tag",
+                  "status": "error",
+                  "message": "failed on setup with \"botocore.exceptions.ClientError: An error occurred (NotImplemented) when calling the ListObjectVersions operation: This part of feature is not implemented yet.\""
+                }
+              ]
+            },
+            {
+              "name": "utils",
+              "label": "utils",
+              "summary": {
+                "total": 1,
+                "passed": 1,
+                "failed": 0,
+                "errored": 0,
+                "skipped": 0,
+                "eligible": 1,
+                "compatibility_rate": 1.0
+              },
+              "examples": []
+            },
+            {
+              "name": "sns",
+              "label": "sns",
+              "summary": {
+                "total": 4,
+                "passed": 0,
+                "failed": 0,
+                "errored": 0,
+                "skipped": 4,
+                "eligible": 0,
+                "compatibility_rate": null
+              },
+              "examples": [
+                {
+                  "name": "test_account_topic",
+                  "status": "skipped",
+                  "message": "[iam root] user does not belong to an account"
+                },
+                {
+                  "name": "test_cross_account_topic",
+                  "status": "skipped",
+                  "message": "[iam root] user does not belong to an account"
+                },
+                {
+                  "name": "test_account_topic_publish",
+                  "status": "skipped",
+                  "message": "[iam root] user does not belong to an account"
+                },
+                {
+                  "name": "test_cross_account_topic_publish",
+                  "status": "skipped",
+                  "message": "[iam root] user does not belong to an account"
+                }
+              ]
+            }
+          ]
+        },
+        "mint": {
+          "label": "mint",
+          "status": "error",
+          "summary": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errored": 0,
+            "skipped": 0,
+            "eligible": 0,
+            "compatibility_rate": null
+          },
+          "feature_summaries": []
+        }
+      }
+    },
     {
       "id": "2026-10-11T08-54-51Z",
       "status": "partial",
@@ -505308,6 +507692,12 @@
           "started_at": "2026-10-11T08:54:51Z",
           "rate": 0.0038,
           "eligible": 789
+        },
+        {
+          "run_id": "2026-10-12T09-15-33Z",
+          "started_at": "2026-10-12T09:15:33Z",
+          "rate": 0.0038,
+          "eligible": 789
         }
       ],
       "mint": [
@@ -506490,6 +508880,12 @@
         {
           "run_id": "2026-10-11T08-54-51Z",
           "started_at": "2026-10-11T08:54:51Z",
+          "rate": null,
+          "eligible": 0
+        },
+        {
+          "run_id": "2026-10-12T09-15-33Z",
+          "started_at": "2026-10-12T09:15:33Z",
           "rate": null,
           "eligible": 0
         }
@@ -508451,6 +510847,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 316,
+            "passed": 0,
+            "failed": 0,
+            "errored": 316,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 316,
             "passed": 0,
@@ -510419,6 +512825,16 @@
             "failed": 0,
             "errored": 108,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 108,
+            "passed": 0,
+            "failed": 0,
+            "errored": 108,
+            "skipped": 0
           }
         ],
         "list_objects_v2": [
@@ -512375,6 +514791,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 50,
+            "passed": 0,
+            "failed": 0,
+            "errored": 50,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 50,
             "passed": 0,
@@ -514343,6 +516769,16 @@
             "failed": 0,
             "errored": 27,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 27,
+            "passed": 0,
+            "failed": 0,
+            "errored": 27,
+            "skipped": 0
           }
         ],
         "parametrize": [
@@ -516299,6 +518735,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 45,
+            "passed": 0,
+            "failed": 0,
+            "errored": 45,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 45,
             "passed": 0,
@@ -518267,6 +520713,16 @@
             "failed": 1,
             "errored": 34,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 35,
+            "passed": 0,
+            "failed": 1,
+            "errored": 34,
+            "skipped": 0
           }
         ],
         "copy": [
@@ -520223,6 +522679,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 33,
+            "passed": 0,
+            "failed": 0,
+            "errored": 33,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 33,
             "passed": 0,
@@ -522191,6 +524657,16 @@
             "failed": 0,
             "errored": 31,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 31,
+            "passed": 0,
+            "failed": 0,
+            "errored": 31,
+            "skipped": 0
           }
         ],
         "webidentity_test": [
@@ -524147,6 +526623,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 27,
+            "passed": 0,
+            "failed": 0,
+            "errored": 27,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 27,
             "passed": 0,
@@ -526115,6 +528601,16 @@
             "failed": 15,
             "errored": 11,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0714,
+            "eligible": 28,
+            "passed": 2,
+            "failed": 15,
+            "errored": 11,
+            "skipped": 0
           }
         ],
         "user_policy": [
@@ -528071,6 +530567,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0645,
+            "eligible": 31,
+            "passed": 2,
+            "failed": 15,
+            "errored": 14,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0645,
             "eligible": 31,
             "passed": 2,
@@ -530039,6 +532545,16 @@
             "failed": 0,
             "errored": 25,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 25,
+            "passed": 0,
+            "failed": 0,
+            "errored": 25,
+            "skipped": 0
           }
         ],
         "lifecycle": [
@@ -531995,6 +534511,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 23,
+            "passed": 0,
+            "failed": 0,
+            "errored": 23,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 23,
             "passed": 0,
@@ -533963,6 +536489,16 @@
             "failed": 0,
             "errored": 21,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 21,
+            "passed": 0,
+            "failed": 0,
+            "errored": 21,
+            "skipped": 0
           }
         ],
         "abac_test": [
@@ -535919,6 +538455,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 12,
+            "passed": 0,
+            "failed": 0,
+            "errored": 12,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 12,
             "passed": 0,
@@ -537887,6 +540433,16 @@
             "failed": 0,
             "errored": 12,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 12,
+            "passed": 0,
+            "failed": 0,
+            "errored": 12,
+            "skipped": 0
           }
         ],
         "session_policy": [
@@ -539843,6 +542399,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 12,
+            "passed": 0,
+            "failed": 0,
+            "errored": 12,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 12,
             "passed": 0,
@@ -541811,6 +544377,16 @@
             "failed": 0,
             "errored": 10,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 10,
+            "passed": 0,
+            "failed": 0,
+            "errored": 10,
+            "skipped": 0
           }
         ],
         "test_of_sts": [
@@ -543767,6 +546343,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 10,
+            "passed": 0,
+            "failed": 5,
+            "errored": 5,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 10,
             "passed": 0,
@@ -545735,6 +548321,16 @@
             "failed": 0,
             "errored": 7,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 7,
+            "passed": 0,
+            "failed": 0,
+            "errored": 7,
+            "skipped": 0
           }
         ],
         "object_ownership": [
@@ -547691,6 +550287,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 7,
+            "passed": 0,
+            "failed": 0,
+            "errored": 7,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 7,
             "passed": 0,
@@ -549659,6 +552265,16 @@
             "failed": 0,
             "errored": 6,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 6,
+            "passed": 0,
+            "failed": 0,
+            "errored": 6,
+            "skipped": 0
           }
         ],
         "lifecycle_expiration": [
@@ -551615,6 +554231,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 7,
+            "passed": 0,
+            "failed": 0,
+            "errored": 7,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 7,
             "passed": 0,
@@ -553583,6 +556209,16 @@
             "failed": 0,
             "errored": 5,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 5,
+            "passed": 0,
+            "failed": 0,
+            "errored": 5,
+            "skipped": 0
           }
         ],
         "delete_marker": [
@@ -555539,6 +558175,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 4,
+            "passed": 0,
+            "failed": 0,
+            "errored": 4,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 4,
             "passed": 0,
@@ -557507,6 +560153,16 @@
             "failed": 0,
             "errored": 3,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 3,
+            "passed": 0,
+            "failed": 0,
+            "errored": 3,
+            "skipped": 0
           }
         ],
         "token_principal_tag_role_policy_test": [
@@ -559463,6 +562119,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 3,
+            "passed": 0,
+            "failed": 0,
+            "errored": 3,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 3,
             "passed": 0,
@@ -561431,6 +564097,16 @@
             "failed": 0,
             "errored": 2,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 2,
+            "passed": 0,
+            "failed": 0,
+            "errored": 2,
+            "skipped": 0
           }
         ],
         "token_request_tag_trust_policy_test": [
@@ -563387,6 +566063,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 1,
+            "passed": 0,
+            "failed": 0,
+            "errored": 1,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 1,
             "passed": 0,
@@ -565355,6 +568041,16 @@
             "failed": 0,
             "errored": 1,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 1,
+            "passed": 0,
+            "failed": 0,
+            "errored": 1,
+            "skipped": 0
           }
         ],
         "utils": [
@@ -567311,6 +570007,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 1.0,
+            "eligible": 1,
+            "passed": 1,
+            "failed": 0,
+            "errored": 0,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 1.0,
             "eligible": 1,
             "passed": 1,
@@ -569279,6 +571985,16 @@
             "failed": 0,
             "errored": 4,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 4,
+            "passed": 0,
+            "failed": 0,
+            "errored": 4,
+            "skipped": 0
           }
         ],
         "group_policy": [
@@ -571235,6 +573951,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 4,
+            "passed": 0,
+            "failed": 0,
+            "errored": 4,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 4,
             "passed": 0,
@@ -573203,6 +575929,16 @@
             "failed": 0,
             "errored": 2,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 2,
+            "passed": 0,
+            "failed": 0,
+            "errored": 2,
+            "skipped": 0
           }
         ],
         "iam_account": [
@@ -575159,6 +577895,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 61,
+            "passed": 0,
+            "failed": 0,
+            "errored": 61,
+            "skipped": 4
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 61,
             "passed": 0,
@@ -577127,6 +579873,16 @@
             "failed": 0,
             "errored": 18,
             "skipped": 1
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 18,
+            "passed": 0,
+            "failed": 0,
+            "errored": 18,
+            "skipped": 1
           }
         ],
         "iam_role": [
@@ -579083,6 +581839,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 13,
+            "passed": 0,
+            "failed": 0,
+            "errored": 13,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 13,
             "passed": 0,
@@ -581051,6 +583817,16 @@
             "failed": 0,
             "errored": 17,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 17,
+            "passed": 0,
+            "failed": 0,
+            "errored": 17,
+            "skipped": 0
           }
         ],
         "lifecycle_transition": [
@@ -583007,6 +585783,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": 0.0,
+            "eligible": 2,
+            "passed": 0,
+            "failed": 0,
+            "errored": 2,
+            "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": 0.0,
             "eligible": 2,
             "passed": 0,
@@ -584975,6 +587761,16 @@
             "failed": 0,
             "errored": 7,
             "skipped": 0
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
+            "rate": 0.0,
+            "eligible": 7,
+            "passed": 0,
+            "failed": 0,
+            "errored": 7,
+            "skipped": 0
           }
         ],
         "sns": [
@@ -586931,6 +589727,16 @@
           {
             "run_id": "2026-10-11T08-54-51Z",
             "started_at": "2026-10-11T08:54:51Z",
+            "rate": null,
+            "eligible": 0,
+            "passed": 0,
+            "failed": 0,
+            "errored": 0,
+            "skipped": 4
+          },
+          {
+            "run_id": "2026-10-12T09-15-33Z",
+            "started_at": "2026-10-12T09:15:33Z",
             "rate": null,
             "eligible": 0,
             "passed": 0,
