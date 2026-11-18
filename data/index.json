@@ -1,11 +1,75 @@
 {
-  "generated_at": "2026-11-17T11:07:39Z",
+  "generated_at": "2026-11-18T10:14:37Z",
   "rate_formula": "compatibility_rate = passed / (passed + failed + errored); skipped and NA are excluded",
   "suite_order": [
     "s3_tests",
     "mint"
   ],
   "runs": [
+    {
+      "id": "2026-11-18T10-12-03Z",
+      "status": "build_failed",
+      "started_at": "2026-11-18T10:12:03Z",
+      "finished_at": "2026-11-18T10:14:37Z",
+      "workflow_run_url": "https://github.com/hevinhsu/ozone-s3-compatibility/actions/runs/44283069871",
+      "execution": {
+        "s3_tests_args": "s3tests/functional",
+        "mint_mode": "core",
+        "mint_targets": [],
+        "ozone_datanodes": "1"
+      },
+      "file": "data/runs/2026-11-18T10-12-03Z.json",
+      "sources": {
+        "ozone": {
+          "repo": "https://github.com/apache/ozone.git",
+          "ref": "master",
+          "commit": "0361eec85f26399900347722120e6d1e4eba4b96",
+          "short_commit": "0361eec85f26"
+        },
+        "s3_tests": {
+          "repo": "https://github.com/ceph/s3-tests.git",
+          "ref": "submodule",
+          "commit": "fb8b73092bb1dd8db829f1205a9e52e73bf9a232",
+          "short_commit": "fb8b73092bb1"
+        },
+        "mint": {
+          "repo": "https://github.com/minio/mint.git",
+          "ref": "submodule",
+          "commit": "12559d50625b722d11fd798ae8ac2fb204e66dd1",
+          "short_commit": "12559d50625b"
+        }
+      },
+      "suites": {
+        "s3_tests": {
+          "label": "s3-tests",
+          "status": "not_run",
+          "summary": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errored": 0,
+            "skipped": 0,
+            "eligible": 0,
+            "compatibility_rate": null
+          },
+          "feature_summaries": []
+        },
+        "mint": {
+          "label": "mint",
+          "status": "not_run",
+          "summary": {
+            "total": 0,
+            "passed": 0,
+            "failed": 0,
+            "errored": 0,
+            "skipped": 0,
+            "eligible": 0,
+            "compatibility_rate": null
+          },
+          "feature_summaries": []
+        }
+      }
+    },
     {
       "id": "2026-11-17T10-45-16Z",
       "status": "partial",
@@ -589548,6 +589612,12 @@
           "started_at": "2026-11-17T10:45:16Z",
           "rate": 0.3516,
           "eligible": 711
+        },
+        {
+          "run_id": "2026-11-18T10-12-03Z",
+          "started_at": "2026-11-18T10:12:03Z",
+          "rate": null,
+          "eligible": 0
         }
       ],
       "mint": [
@@ -590946,6 +591016,12 @@
         {
           "run_id": "2026-11-17T10-45-16Z",
           "started_at": "2026-11-17T10:45:16Z",
+          "rate": null,
+          "eligible": 0
+        },
+        {
+          "run_id": "2026-11-18T10-12-03Z",
+          "started_at": "2026-11-18T10:12:03Z",
           "rate": null,
           "eligible": 0
         }
